@@ -1,0 +1,35 @@
+name: publish
+
+# Publishes the package to npm with a provenance statement on every version tag, the way n8n
+# requires for verified community nodes from 2026-05-01. Provenance: n8n-io/n8n-nodes-starter
+# .github/workflows/publish.yml (2026-10-31), actions pinned by SHA.
+#
+# One-time setup on npmjs.com: package settings, Publish access, Trusted Publishers, add GitHub
+# Actions with owner faxforagents, repository n8n-nodes-faxforagents, workflow publish.yml. Then
+# `npm run release` locally bumps the version, tags and pushes, and this workflow publishes.
+
+on:
+  push:
+    tags:
+      - "*.*.*"
+
+jobs:
+  publish:
+    name: publish to npm with provenance
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+          cache: npm
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+      - run: npm test
+      - name: Publish (OIDC trusted publishing, no token)
+        run: npm publish --access public --provenance
