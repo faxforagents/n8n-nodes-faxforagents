@@ -89,7 +89,7 @@ its own send.
 
 ## Compatibility
 
-Built with `@n8n/node-cli` against `n8n-workflow` 2.x. Node 20 or later.
+Built with `@n8n/node-cli` against `n8n-workflow` 2.x. The dev toolchain needs Node 22.
 
 ## Usage
 
