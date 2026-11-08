@@ -14,3 +14,8 @@ updates:
     groups:
       npm-minor:
         update-types: [minor, patch]
+    ignore:
+      # n8n-node lint crashes on TypeScript 7. The typescript-eslint that @n8n/node-cli 0.54 bundles accepts
+      # typescript below 6.1 only (2026-11-08). Drop when @n8n/node-cli ships a typescript-eslint that accepts TypeScript 7.
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
