@@ -19,3 +19,8 @@ updates:
       # typescript below 6.1 only (2026-11-08). Drop when @n8n/node-cli ships a typescript-eslint that accepts TypeScript 7.
       - dependency-name: typescript
         update-types: ["version-update:semver-major"]
+      # @n8n/node-cli 1.x is the n8n 3 release candidate line, published under the npm rc dist-tag only.
+      # latest is 0.55.6 and beta is 0.56.1 (2026-11-09). Drop this rule once
+      # `npm view @n8n/node-cli dist-tags.latest` prints 1.x.
+      - dependency-name: "@n8n/node-cli"
+        versions: [">=1.0.0"]
