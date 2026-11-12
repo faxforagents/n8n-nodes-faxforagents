@@ -41,7 +41,7 @@ automation platform.
 Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in
 the n8n community nodes documentation. The package name is `n8n-nodes-faxforagents`.
 
-An n8n AI Agent can also get the full 15-tool surface without this package. Point the MCP Client
+An n8n AI Agent can also get the full 17-tool surface without this package. Point the MCP Client
 Tool node at the hosted server, `https://mcp.faxforagents.com/mcp/`. The
 [MCP page](https://faxforagents.com/mcp/) has the settings.
 
