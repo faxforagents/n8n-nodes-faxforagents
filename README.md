@@ -97,7 +97,7 @@ The send flow is three nodes in a row: Prepare, then Quote with the document id,
 quote id. Get Status afterwards tells you whether it arrived. A `partial` or `unknown` outcome never
 retransmits on its own.
 
-Price card launch-v2 is effective from 2026-10-31. $0.039 per page sent, $0.019 per page received. $2 per
+Price card launch-v3 is effective from 2026-11-12. $0.039 per page sent, $0.019 per page received. $2 per
 number per month, $19 per month for the Agent workspace. Sandbox pages cost 0.
 
 ## Resources
